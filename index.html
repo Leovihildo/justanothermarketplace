@@ -8,31 +8,85 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="carousel">
+    <div class="carousel" id="hero-section">
         <div class="carousel-slide">
              <div class="hero-image element-center column carousel-content" id="hero1">
-                <h3 class="h1 text-center width65">Find Skilled Artisans Near You</h3>
+                <h3 class="h1 text-center width-big">Find Skilled Artisans Near You</h3>
                 <p class="p">Trusted professionals, just a click away.</p>
-                <a class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
             </div>
         </div>
 
           <div class="carousel-slide">
              <div class="hero-image element-center column carousel-content" id="hero2">
-                <h3 class="h1 text-center style="width: 100%;">Grow Your Business, Get More Clients</h3>
+                <h3 class="h1 text-center">Grow Your Business, Get More Clients</h3>
                 <p class="p">Join our platform and connect with customers who need your skills.</p>
-                <a class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
             </div>
         </div>
 
           <div class="carousel-slide">
              <div class="hero-image element-center column carousel-content" id="hero3">
-                <h3 class="h1 text-center" style="width: 100%;">Bridging the Gap Between Skills & Needs</h3>
+                <h3 class="h1 text-center">Bridging the Gap Between Skills & Needs</h3>
                 <p class="p">We make it easy for artisans and customers to connect.</p>
-                <a class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
             </div>
         </div>
     </div>
+
+    <section class="section" id="body-section">
+        <div class="element-center column middle">
+            <h4 class="small-header text-center">I am looking to</h4>
+            <a href="#comingSoon-section" class="btn element-center p" id="hire-artisans">Hire Artisans</a>
+            <a href="#artisansForm-section" class="btn element-center p" id="get-customers">Get Customers</a>
+        </div>
+    </section>
+
+    <section class="section bg-sub hide" id="comingSoon-section">
+        <div class="element-center column middle">
+            <h4 class="h1 text-center">This Feature is Coming Soon</h4>
+            <a href="#body-section" class="btn element-center p" id="coming-soon">Go back</a>
+        </div>
+    </section>
+
+    <section class="section hide" id="artisansForm-section">
+        <div class="element-center column middle">
+            <h4 class="h1 text-center">Register as an Artisan</h4>
+            <form action="" method="post">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. +234 812 345 6789" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="skill">Skill/Trade</label>
+                <select id="skill" name="skill" required>
+                    <option value="">-- Select your skill --</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical Work</option>
+                    <option value="carpentry">Carpentry</option>
+                    <option value="painting">Painting</option>
+                    <option value="tailoring">Tailoring</option>
+                    <option value="mechanic">Mechanic</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" required>
+
+                <label for="experience">Years of Experience</label>
+                <input type="number" id="experience" name="experience" placeholder="e.g. 5" min="0">
+
+                <label for="bio">Short Bio</label>
+                <textarea id="bio" name="bio" placeholder="Tell customers about your skills"></textarea>
+
+                <button type="submit" class="btn element-center p">Register</button>
+            </form>
+        </div>
+    </section>
    
 
 <script>
@@ -45,7 +99,31 @@ function showNextSlide() {
     slides[index].classList.add('active');
 }
 
-setInterval(showNextSlide, 8000); // Change slide every 4s
+setInterval(showNextSlide, 8000);
+
+// Reveal sections
+let customers_btn = document.getElementById('hire-artisans');
+let artisans_btn = document.getElementById('get-customers');
+
+let comingSoon_section = document.getElementById('comingSoon-section');
+let artisansForm_section = document.getElementById('artisansForm-section');
+
+customers_btn.addEventListener("click", ()=>{
+    comingSoon_section.classList.remove('hide');
+    artisansForm_section.classList.add('hide');
+})
+
+document.getElementById('coming-soon').addEventListener("click", ()=>{
+    setTimeout(()=>{
+        comingSoon_section.classList.add('hide');
+    }, 700);
+})
+
+artisans_btn.addEventListener("click", ()=>{
+    artisansForm_section.classList.remove('hide');
+    comingSoon_section.classList.add('hide');
+})
+
 </script>
     
 </body>
