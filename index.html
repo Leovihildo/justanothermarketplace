@@ -13,7 +13,7 @@
              <div class="hero-image element-center column carousel-content" id="hero1">
                 <h3 class="h1 text-center width-big">Find Skilled Artisans Near You</h3>
                 <p class="p">Trusted professionals, just a click away.</p>
-                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p get-started" id="get-started">Get Started</a>
             </div>
         </div>
 
@@ -21,7 +21,7 @@
              <div class="hero-image element-center column carousel-content" id="hero2">
                 <h3 class="h1 text-center">Grow Your Business, Get More Clients</h3>
                 <p class="p">Join our platform and connect with customers who need your skills.</p>
-                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p get-started" id="get-started">Get Started</a>
             </div>
         </div>
 
@@ -29,12 +29,12 @@
              <div class="hero-image element-center column carousel-content" id="hero3">
                 <h3 class="h1 text-center">Bridging the Gap Between Skills & Needs</h3>
                 <p class="p">We make it easy for artisans and customers to connect.</p>
-                <a href="#body-section" class="btn element-center p" id="get-started">Get Started</a>
+                <a href="#body-section" class="btn element-center p get-started" id="get-started">Get Started</a>
             </div>
         </div>
     </div>
 
-    <section class="section" id="body-section">
+    <section class="section main-section hide" id="body-section">
         <div class="element-center column middle">
             <h4 class="small-header text-center">I am looking to</h4>
             <a href="#comingSoon-section" class="btn element-center p" id="hire-artisans">Hire Artisans</a>
@@ -42,14 +42,14 @@
         </div>
     </section>
 
-    <section class="section bg-sub hide" id="comingSoon-section">
+    <section class="section sub-section bg-sub hide" id="comingSoon-section">
         <div class="element-center column middle">
             <h4 class="h1 text-center">This Feature is Coming Soon</h4>
             <a href="#body-section" class="btn element-center p" id="coming-soon">Go back</a>
         </div>
     </section>
 
-    <section class="section hide" id="artisansForm-section">
+    <section class="section sub-section hide" id="artisansForm-section">
         <div class="element-center column">
             <h4 class="h1 text-center width-big">Register as an Artisan</h4>
             <form action="" method="post">
@@ -102,6 +102,12 @@ function showNextSlide() {
 setInterval(showNextSlide, 8000);
 
 // Reveal sections
+document.querySelectorAll('.get-started').forEach(element => {
+    element.addEventListener("click", ()=>{
+    document.getElementById('body-section').classList.remove('hide');
+}) 
+}); 
+
 let customers_btn = document.getElementById('hire-artisans');
 let artisans_btn = document.getElementById('get-customers');
 
@@ -123,6 +129,25 @@ artisans_btn.addEventListener("click", ()=>{
     artisansForm_section.classList.remove('hide');
     comingSoon_section.classList.add('hide');
 })
+
+const sections = document.querySelectorAll(".sub-section");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("hide");  // Show section
+    } else {
+      entry.target.classList.add("hide"); // Hide section
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
+
 
 </script>
     
