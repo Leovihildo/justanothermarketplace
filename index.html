@@ -6,6 +6,10 @@
     <title>Justanothermarketplace</title>
     <!-- Import Styles -->
     <link rel="stylesheet" href="./index.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.2/build/css/intlTelInput.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.11.2/build/js/intlTelInput.min.js"></script>
 </head>
 <body>
     <div class="carousel" id="hero-section">
@@ -53,8 +57,11 @@
         <div class="element-center column">
             <h4 class="h1 text-center width-big">Register as an Artisan</h4>
             <form action="" method="post">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
 
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="e.g. +234 812 345 6789" required>
@@ -63,7 +70,7 @@
                 <input type="email" id="email" name="email" placeholder="Enter your email">
 
                 <label for="skill">Skill/Trade</label>
-                <select id="skill" name="skill" required>
+                <select id="skill" name="skill" required onchange=toggleOtherField(this)>
                     <option value="">-- Select your skill --</option>
                     <option value="plumbing">Plumbing</option>
                     <option value="electrical">Electrical Work</option>
@@ -73,6 +80,11 @@
                     <option value="mechanic">Mechanic</option>
                     <option value="other">Other</option>
                 </select>
+
+                <div id="otherSkillField" class="hide">
+                    <label for="otherSkill">Please specify:</label>
+                    <input type="text" id="otherSkill" name="otherSkill" />
+                </div>
 
                 <label for="location">Location</label>
                 <input type="text" id="location" name="location" placeholder="Enter your location" required>
@@ -89,6 +101,7 @@
     </section>
    
 
+<script src="./Forms.js"></script>
 <script>
 let slides = document.querySelectorAll('.carousel-slide');
 let index = 0;
@@ -130,6 +143,7 @@ artisans_btn.addEventListener("click", ()=>{
     comingSoon_section.classList.add('hide');
 })
 
+
 const sections = document.querySelectorAll(".sub-section");
 
 const observer = new IntersectionObserver((entries) => {
@@ -141,7 +155,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.2
+  threshold: 0
 });
 
 sections.forEach((section) => {
