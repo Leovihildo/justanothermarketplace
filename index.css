@@ -128,7 +128,7 @@ a{
 #hero3{
     background-image: url('./images/3.png');
 }
-#get-started{
+a.get-started{
     width: 300px;
     height: 80px;
     background-color: var(--btn-colour);
@@ -149,9 +149,11 @@ a{
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    pointer-events: none;
 }
 
 .carousel-slide.active {
+    pointer-events: auto;
     opacity: 1;
 }
 #hire-artisans, #get-customers, #coming-soon{
@@ -282,4 +284,57 @@ form>button{
 }
 .hide{
     display: none !important;
+}
+
+/* FOR LARGER SCREENS */
+
+@media screen and (width>992px) {
+    :root{
+    /* FONTS */
+        --h1-fontSize: 3.4rem;
+        --normalText-fontSize: 1.7rem;
+        --smallText-fontSize: 1.3rem;
+    }
+    .change-background{
+        background-color: #801805;
+    }
+    .btn{
+        cursor: pointer;
+    }
+    .hero-image{
+        align-items: start;
+    }
+    .hero-image>*{
+        padding: 3px 35px;
+    }
+    .hero-image>h3, .hero-image>p{
+        width: 42%;
+    }
+    .hero-image>a{
+        top: 75%;
+        left: 20%
+    }
+    a.get-started:hover, #register-btn:hover{
+        background-color: #801805 !important;
+    }
+    #hero1{
+        background-image: url('./images/Desktop1.png');
+    }
+    #hero2{
+        background-image: url('./images/Desktop2.png');
+    }
+    #hero3{
+        background-image: url('./images/Desktop3.png');
+    }
+    #hire-artisans, #get-customers, #coming-soon{
+        width: 320px;
+        height: 90px;
+    }
+    #hire-artisans:hover, #get-customers:hover, #coming-soon:hover{
+        transform: scale(1.05);
+    }
+    #coming-soon:hover{
+        background-color: var(--text-colour);
+        color: var(--sub-colour);
+    }
 }
