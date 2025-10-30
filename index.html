@@ -54,92 +54,111 @@
 
     <section class="section sub-section bg-sub hide" id="artisansForm-section">
         <div class="element-center column">
-            <h4 class="h1 text-center width-big">Register as an Artisan</h4>
+            <div>
+                <h4 class="h1 text-center width-big">Register as an Artisan</h4>
+            </div>
             <form action="" method="post" class="glass-card">
-                <label for="surname">Surname</label>
-                <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
-
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+                <div>
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+                </div>
+                
+                <div>
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+                </div>
                 
                 <div class="phone-input">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="e.g. +234 812 345 6789" required>
                 </div>
                 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <div>
+                     <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
 
-                <label for="skill">Skill/Trade</label>
-                <select id="skill" name="skill" required onchange=toggleOtherField(this)>
-                    <option value="">-- Select your skill --</option>
-                    <option value="plumbing">Plumbing</option>
-                    <option value="electrical">Electrical Work</option>
-                    <option value="carpentry">Carpentry</option>
-                    <option value="painting">Painting</option>
-                    <option value="tailoring">Tailoring</option>
-                    <option value="mechanic">Mechanic</option>
-                    <option value="barbing">Barbing</option>
-                    <option value="tiling">Tiling</option>
-                    <option value="bricklaying">Briclaying</option>
-                    <option value="drycleaning">Drycleaning</option>
-                    <option value="hairstyling">Hair-styling</option>
-                    <option value="furnituremaking">Furniture making</option>
-                    <option value="other">Other</option>
-                </select>
+                <div>
+                   <label for="skill">Skill/Trade</label>
+                    <select id="skill" name="skill" required onchange=toggleOtherField(this)>
+                        <option value="">-- Select your skill --</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical Work</option>
+                        <option value="carpentry">Carpentry</option>
+                        <option value="painting">Painting</option>
+                        <option value="tailoring">Tailoring</option>
+                        <option value="mechanic">Mechanic</option>
+                        <option value="barbing">Barbing</option>
+                        <option value="tiling">Tiling</option>
+                        <option value="bricklaying">Briclaying</option>
+                        <option value="drycleaning">Drycleaning</option>
+                        <option value="hairstyling">Hair-styling</option>
+                        <option value="furnituremaking">Furniture making</option>
+                        <option value="other">Other</option>
+                    </select>  
+                </div>
+               
 
                 <div id="otherSkillField" class="hide">
                     <label for="otherSkill">Please specify:</label>
                     <input type="text" id="otherSkill" name="otherSkill" />
                 </div>
 
-                <label for="location">Location</label>
-                <select name="location" id="location" required>
-                    <option value="" selected="selected">- Select -</option>
-                    <option value="Abia">Abia</option>
-                    <option value="Adamawa">Adamawa</option>
-                    <option value="AkwaIbom">AkwaIbom</option>
-                    <option value="Anambra">Anambra</option>
-                    <option value="Bauchi">Bauchi</option>
-                    <option value="Bayelsa">Bayelsa</option>
-                    <option value="Benue">Benue</option>
-                    <option value="Borno">Borno</option>
-                    <option value="Cross River">Cross River</option>
-                    <option value="Delta">Delta</option>
-                    <option value="Ebonyi">Ebonyi</option>
-                    <option value="Edo">Edo</option>
-                    <option value="Ekiti">Ekiti</option>
-                    <option value="Enugu">Enugu</option>
-                    <option value="FCT">FCT</option>
-                    <option value="Gombe">Gombe</option>
-                    <option value="Imo">Imo</option>
-                    <option value="Jigawa">Jigawa</option>
-                    <option value="Kaduna">Kaduna</option>
-                    <option value="Kano">Kano</option>
-                    <option value="Katsina">Katsina</option>
-                    <option value="Kebbi">Kebbi</option>
-                    <option value="Kogi">Kogi</option>
-                    <option value="Kwara">Kwara</option>
-                    <option value="Lagos">Lagos</option>
-                    <option value="Nasarawa">Nasarawa</option>
-                    <option value="Niger">Niger</option>
-                    <option value="Ogun">Ogun</option>
-                    <option value="Ondo">Ondo</option>
-                    <option value="Osun">Osun</option>
-                    <option value="Oyo">Oyo</option>
-                    <option value="Plateau">Plateau</option>
-                    <option value="Rivers">Rivers</option>
-                    <option value="Sokoto">Sokoto</option>
-                    <option value="Taraba">Taraba</option>
-                    <option value="Yobe">Yobe</option>
-                    <option value="Zamfara">Zamafara</option>
-                </select>
+                <div>
+                    <label for="location">Location</label>
+                    <select name="location" id="location" autocomplete="on">
+                        <option value="" selected="selected">- Select -</option>
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="AkwaIbom">AkwaIbom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT">FCT</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamafara</option>
+                    </select>
+                </div>
+                
 
-                <label for="experience">Years of Experience</label>
-                <input type="number" id="experience" name="experience" placeholder="e.g. 5" min="0">
+                <div>
+                    <label for="experience">Years of Experience</label>
+                    <input type="number" id="experience" name="experience" placeholder="e.g. 5" min="0">
+                </div>
+               
 
-                <label for="bio">Short Bio</label>
-                <textarea id="bio" name="bio" placeholder="Tell customers about your skills"></textarea>
+                <div class="bio-textarea">
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" placeholder="Tell customers about your skills"></textarea>
+                </div>
 
                 <button type="submit" class="btn element-center p" id="register-btn">Register</button>
             </form>
@@ -214,4 +233,3 @@ sections.forEach((section) => {
     
 </body>
 </html>
-
